@@ -1,25 +1,16 @@
 {
-  "name": "server",
+  "name": "shulehub_api",
   "version": "1.0.0",
-  "description": "The SERVER API for Soshi Connect APP",
-  "main": "index.js",
+  "description": "backend api for shulehub",
+  "main": "api/server.js",
   "scripts": {
-    "build": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "jason2000-cpu"
+    "test": "node api/server.js"
   },
   "author": "jason2000-cpu",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "json-serve": "^0.1.0",
-    "json-server": "^0.17.4",
-    "uuid": "^9.0.1"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+    "json-server": "^0.17.3"
   }
 }
