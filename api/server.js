@@ -22,15 +22,20 @@ const jsonServer = require('json-server')
 const server = jsonServer.create()
 const router = jsonServer.router('db.json')
 const middlewares = jsonServer.defaults()
+const cors = require('cors')
 
 server.use(middlewares)
+server.use(cors)
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
     '/product/:resource/:id/show': '/:resource/:id'
 }))
 server.use(router)
-server.listen(3000, () => {
-    console.log('JSON Server is running')
+
+PORT = 3001
+
+server.listen(PORT, () => {
+    console.log(`JSON Server is running on http://localhost:${PORT}`)
 })
 
 module.exports = server
