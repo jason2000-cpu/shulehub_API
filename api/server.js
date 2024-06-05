@@ -18,24 +18,22 @@
 // })
 
 
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
-const cors = require('cors')
+const jsonServer = require('json-server');
+const cors = require('cors');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');
+const middlewares = jsonServer.defaults();
 
-server.use(middlewares)
-server.use(cors)
-server.use(jsonServer.rewriter({
-    '/api/*': '/$1',
-    '/product/:resource/:id/show': '/:resource/:id'
-}))
-server.use(router)
+server.use(cors());  // Call the cors function
+server.use(jsonServer.bodyParser);
+server.use(middlewares);
+server.use(router);
 
-PORT = 3001
+const PORT = process.env.PORT || 3001;  // Use environment variable for port
 
 server.listen(PORT, () => {
-    console.log(`JSON Server is running on http://localhost:${PORT}`)
-})
+    console.log(`JSON Server is running on http://localhost:${PORT}`);
+});
 
-module.exports = server
+module.exports = server;
+
