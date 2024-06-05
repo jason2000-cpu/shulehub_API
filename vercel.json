@@ -7,11 +7,11 @@
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://shulehub-api-5yj9.vercel.app/$1"
+      "source": "/api/external/(.*)",
+      "destination": "https://shulehub-mrknw1mke-jasons-projects-2db5efd0.vercel.app/$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "destination": "/api/server.js"
     }
   ]

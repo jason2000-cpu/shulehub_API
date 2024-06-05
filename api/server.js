@@ -24,16 +24,15 @@ const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
-server.use(cors());  // Call the cors function
+server.use(cors());
 server.use(jsonServer.bodyParser);
 server.use(middlewares);
 server.use(router);
 
-const PORT = process.env.PORT || 3001;  // Use environment variable for port
+const PORT = process.env.PORT || 3001;
 
 server.listen(PORT, () => {
     console.log(`JSON Server is running on http://localhost:${PORT}`);
 });
 
 module.exports = server;
-
